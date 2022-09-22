@@ -1,12 +1,17 @@
-package com.bean.lifecycle.config.beanlifecycle.singleton.scope;
+package com.scope;
 
+import com.scope.Filter;
+import com.scope.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ContentFiltering implements Filter{
+@Scope(value= ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public class ContentFiltering implements Filter {
+
+
     private static int instances;
     @Autowired
     private Movie movie;

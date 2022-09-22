@@ -1,4 +1,4 @@
-package com.bean.lifecycle.config.beanlifecycle.singleton.scope;
+package com.scope;
 
 public interface Filter {
     public String [] getMovies(String movie);
