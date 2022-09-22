@@ -27,12 +27,12 @@ public class RecommendedMovieImpmenetation {
 
 
 
-    @PostConstruct
-    public void databaseConnection(){
-//        logger.info("Running this method first before any bean methods");
-        System.out.println("Running this method first before any bean methods in MongoDB");
-
-    }
+//    @PostConstruct
+//    public void databaseConnection(){
+////        logger.info("Running this method first before any bean methods");
+//        System.out.println("Running this method first before any bean methods in MongoDB");
+//
+//    }
 
     @PreDestroy
     public void disconnecDatabase(){

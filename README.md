@@ -33,6 +33,8 @@ Requesting Trailer => Proxy Server => Client => Manish
 
 Singleton => Proxy Mode => Prototype By Injecting into Singleton
 
+
+
 @ComponentScan
 
 => Scans specific packages
@@ -53,7 +55,7 @@ Singleton => Proxy Mode => Prototype By Injecting into Singleton
 
 Bean Life Cycle
 
-Container => Bean Instantiation => Dependency Injection => Post Construct Method=> Bean is Ready
+Container => Bean Instantiation => Dependency Injection => Post Constructor Method=> Bean is Ready => Pre Destroy Method
 
 
 Employee Management System
@@ -75,6 +77,28 @@ Container => Method with @PreDestroy => Bean Destroyed
 
 
 Prototypes Scoped Beans
+
+
+Singleton => Container => Insantiates Beans => PostConstructor => All Beans get ready => PreDestroy
+ConnectDatabase() => PostConstructor
+obj1.AddEmployee()
+obj1.DeleteEmployee()
+obj2.updateEmployee()
+obj2.findEmployee()
+DisconnectDatabase() => PreDestroy
+
+Prototype =>Container => Instantiates Beans => Obj1 Beans Ready => Post Constructors => PreDestroy => Obj2 Beans Ready => Post Constructors => PreDestroy
+
+ConnectDatabase() => PostConstructor
+obj1.AddEmployee()
+obj1.DeleteEmployee()
+DisconnectDatabase() => PreDestroy
+
+ConnectDatabase() => PostConstructor
+obj2.updateEmployee()
+obj2.findEmployee()
+DisconnectDatabase() => PreDestroy
+
 
 
 

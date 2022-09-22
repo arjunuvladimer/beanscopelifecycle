@@ -1,4 +1,5 @@
 package com.bean.lifecycle.config.beanlifecycle.lifecycleprototypescopedbeans;
 
-public class MovieRecommenderSystem {
+public interface Filter {
+    public String[] getRecommendations();
 }

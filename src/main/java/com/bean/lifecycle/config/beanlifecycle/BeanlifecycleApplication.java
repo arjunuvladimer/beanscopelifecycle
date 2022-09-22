@@ -2,6 +2,8 @@ package com.bean.lifecycle.config.beanlifecycle;
 
 
 import com.bean.lifecycle.config.beanlifecycle.SpringBasedDependencyInjection.RecommendedMovieImpmenetation;
+import com.bean.lifecycle.config.beanlifecycle.lifecycleprototypescopedbeans.ContentFilter2;
+import com.bean.lifecycle.config.beanlifecycle.lifecycleprototypescopedbeans.Movie1;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,7 +18,7 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.scope", "com.bean.lifecycle.config.beanlifecycle.SpringBasedDependencyInjection"})
+@ComponentScan(basePackages = {"com.scope", "com.bean.lifecycle.config.beanlifecycle.SpringBasedDependencyInjection", "com.bean.lifecycle.config.beanlifecycle.lifecycleprototypescopedbeans"})
 
 public class BeanlifecycleApplication {
 
@@ -78,6 +80,18 @@ public class BeanlifecycleApplication {
 //
 //		System.out.println(Arrays.toString(finalResultMovies3));
 
+		// Singleton Bean Executon for Post Construct and Pre Destory
+//		ContentFilter2 CF2 = appContextObj.getBean(ContentFilter2.class);
+//		System.out.println(CF2);
+//		ContentFilter2 CF3 = appContextObj.getBean(ContentFilter2.class);
+//		System.out.println(CF3);
+//
+		// Prototype Based Bean Execution for Post Construct and Pre Destroy
+		Movie1 m1 = appContextObj.getBean(Movie1.class);
+		System.out.println(m1);
+
+		Movie1 m2 = appContextObj.getBean(Movie1.class);
+		System.out.println(m2);
 
 
 
